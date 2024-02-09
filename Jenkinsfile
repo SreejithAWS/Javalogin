@@ -9,8 +9,8 @@ pipeline {
                     cleanWs()
                 }
             }
-            stage('Checkout SCM'){
-                steps {
+        stage('Checkout SCM'){
+            steps {
                     git branch: 'main', url: 'https://github.com/SreejithAWS/Javalogin.git'
                 }
             }
