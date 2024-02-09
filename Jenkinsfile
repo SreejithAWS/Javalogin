@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Docker Image build') {
             steps {
-                sh 'docker build -t sreejitheyne/tomcat Dockerfile .'
+                sh 'docker build -t sreejitheyne/tomcat -f Dockerfile .'
             }
         }
 
