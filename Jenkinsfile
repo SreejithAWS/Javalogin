@@ -24,6 +24,12 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('Docker Image build') {
+            steps {
+                sh 'docker build -t sreejitheyne/tomcat Dockerfile .'
+            }
+        }
+
     }
 
 }
