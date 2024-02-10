@@ -1,4 +1,5 @@
-// LoginServlet.java
+package com.example;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
@@ -13,12 +14,12 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         
         // Validate username and password (you can replace this with your own validation logic)
-        if(username.equals("admin") && password.equals("password")) {
+        if(username != null && password != null && username.equals("admin") && password.equals("password")) {
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
-            response.sendRedirect("welcome.jsp"); // Redirect to welcome page
+            response.sendRedirect(request.getContextPath() + "/welcome.jsp"); // Redirect to welcome page
         } else {
-            response.sendRedirect("login.html"); // Redirect back to login page
+            response.sendRedirect(request.getContextPath() + "/login.html"); // Redirect back to login page
         }
     }
 }
